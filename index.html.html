@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valentine 💘</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            position: absolute;
+        }
+        #yesBtn {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 200px;
+        }
+        #noBtn {
+            left: 50%;
+            transform: translateX(-50%);
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💘 Will you be my Valentine? 💘</h1>
+
+    <button id="yesBtn" onclick="yesClicked()">YES ❤️</button>
+    <button id="noBtn">NO 💔</button>
+
+    <h2 id="message"></h2>
+
+    <script>
+        // YES button click
+        function yesClicked() {
+            document.getElementById("message").innerHTML =
+                "Yayyy! 💖 I knew it 😍 Happy Valentine’s Day 💕";
+        }
+
+        // Automatically move NO button randomly every 500ms
+        const noBtn = document.getElementById("noBtn");
+        setInterval(() => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }, 500); // moves every half second
+    </script>
+
+</body>
+</html>
